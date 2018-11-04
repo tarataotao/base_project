@@ -4,6 +4,7 @@ import com.tj.base.domain.JsonData;
 import com.tj.base.domain.User;
 import com.tj.base.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,4 +27,29 @@ public class UserController {
         int id=userService.add(user);
         return JsonData.buildSuccess(id);
     }
+
+    @RequestMapping("findAll")
+    public Object findAdd(){
+        return JsonData.buildSuccess(userService.getAll());
+    }
+
+    @RequestMapping("findById")
+    public Object findById(long id){
+        return JsonData.buildSuccess(userService.findById(id));
+    }
+
+    @RequestMapping("deldById")
+    public Object deldById(long id){
+        userService.deldById(id);
+        return JsonData.buildSuccess();
+    }
+
+
+    @GetMapping("update")
+    public Object update(User user){
+        userService.update(user);
+        return JsonData.buildSuccess();
+    }
+
+
 }

@@ -20,4 +20,24 @@ public class UserServiceImpl implements UserService{
         int id=user.getId();
         return id;
     }
+
+    @Override
+    public Object getAll() {
+        return userMapper.getAll();
+    }
+
+    @Override
+    public Object findById(long id) {
+        return userMapper.findById(id);
+    }
+
+    @Override
+    public void deldById(long id) {
+         userMapper.delete(id);
+    }
+
+    @Override
+    public void update(User user) {
+          userMapper.update(user);;
+    }
 }
