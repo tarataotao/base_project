@@ -13,4 +13,7 @@ public interface UserService {
     void deldById(long id);
 
     void update(User user);
+
+
+    public int addAccount();
 }

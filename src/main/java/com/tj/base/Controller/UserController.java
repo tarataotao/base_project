@@ -52,4 +52,9 @@ public class UserController {
     }
 
 
+    @GetMapping("add_account")
+    public Object transac(){
+        int id=userService.addAccount();
+        return JsonData.buildSuccess(id);
+    }
 }
