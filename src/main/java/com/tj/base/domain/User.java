@@ -16,6 +16,18 @@ public class User implements Serializable{
 
     private Date createTime;
 
+
+    public User() {
+    }
+
+    public User(int id, String name, String phone, int age, Date createTime) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.age = age;
+        this.createTime = createTime;
+    }
+
     public int getId() {
         return id;
     }
