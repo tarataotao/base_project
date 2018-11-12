@@ -3,6 +3,8 @@ package com.tj.base.Controller;
 import com.tj.base.domain.JsonData;
 import com.tj.base.domain.User;
 import com.tj.base.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,8 @@ import java.util.Date;
 @RestController
 @RequestMapping("/user/")
 public class UserController {
+
+    private Logger logger= LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private UserService userService;
